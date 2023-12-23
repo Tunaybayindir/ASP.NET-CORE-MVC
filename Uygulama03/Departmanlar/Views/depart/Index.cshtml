@@ -1,0 +1,31 @@
+﻿@using Departmanlar.Models;
+@model List<departmanlar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TextLayout.cshtml";
+}
+<h1>Departmanlar</h1>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.ID </td>
+            <td>@x.departmanAd</td>
+            <td><a href="/depart/DepartSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/depart/DepartGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-default" style="background-color:#dee61d">Detaylar</a></td>
+        </tr>
+        }
+    
+</table>
+<a asp-controller="depart" asp-action="YeniDepartman" class="btn btn-primary">Yeni Depart</a>
