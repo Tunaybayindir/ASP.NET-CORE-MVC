@@ -1,0 +1,28 @@
+﻿@using Departmanlar.Models;
+@model List<Personel>
+@{
+    ViewData["Title"] = "BirimDetay";
+}
+
+<h1>BirimDetay</h1>
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>AD</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelID </td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.Sehir</td>
+        </tr>
+    }
+
+</table>

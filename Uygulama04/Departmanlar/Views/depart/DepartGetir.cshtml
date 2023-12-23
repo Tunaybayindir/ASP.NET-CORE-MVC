@@ -1,0 +1,18 @@
+﻿@model Departmanlar.Models.Birim;
+@{
+    ViewData["Title"] = "DepartGetir";
+}
+
+
+<h1>Departman Güncelle</h1>
+<hr />
+@using (Html.BeginForm("DepartmanGuncelle", "depart", FormMethod.Post))
+{
+    <b>Departman ID</b>
+    @Html.TextBoxFor(x => x.BirimID, new { @class = "form-control" })
+    <br />
+    <b>Departman Ad1</b>
+    @Html.TextBoxFor(x => x.BirimAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Departman Ekle</button>
+}
