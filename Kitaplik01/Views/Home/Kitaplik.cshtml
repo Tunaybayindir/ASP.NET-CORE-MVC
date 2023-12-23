@@ -1,0 +1,30 @@
+﻿@model List<Kitaplık.Models.Kitaplar>
+
+@{
+    ViewData["Title"] = "Kitaplık";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <table class="table table-dark">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                KİTAP ADI
+            </th>
+            <th>
+                YAZAR
+            </th>
+        </tr>
+        @foreach (var kitap in Model)
+        {
+            <tr>
+                <th>@kitap.UrunId</th>
+                <td>@kitap.UrunAd</td>
+                <td>@kitap.UrunYazar</td>
+            </tr>
+        }
+    </table>
+</div>
